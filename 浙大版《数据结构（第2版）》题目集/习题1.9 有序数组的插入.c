@@ -2,14 +2,14 @@ bool Insert( List L, ElementType X )
 {   if (L->Last==MAXSIZE-1) /*满了*/
     {   return false;   } 
     
-    for(int i=1;i<=L->Last;i++)
+    for(int i=0;i<=L->Last;i++)
     {   if(X==L->Data[i])   /*找到了*/
         {   return false;   }
 
         if(X>L->Data[i])    /*这个位置的数已经比X大了*/
-        {   for(int j=L->Last+1;j>=i;j--)/*移位*/
-            {   L->Data[j]=L->Data[j-1];    }   
-            L->Data[i-1]=X;/*插入X*/
+        {   for(int j=L->Last;j>=i;j--)/*移位*/
+            {   L->Data[j+1]=L->Data[j];    }   
+            L->Data[i]=X;/*插入X*/
             L->Last++;
             return true;
         }
