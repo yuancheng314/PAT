@@ -6,7 +6,7 @@ int main()
     while(scanf("%d %d",&coefficient,&index)!=EOF)
     {   if(index!=0)
         {   if(flag++) putchar(' ');
-            print("%d %d",coefficient*index,index-1);
+            printf("%d %d",coefficient*index,index-1);
         }
 
 
