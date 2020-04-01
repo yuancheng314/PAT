@@ -9,7 +9,7 @@ int main()
     {   scanf("%d",&init[i]);      
     }
     for(int i=0;i<N;i++)
-    {   scanf("%d",&mid[i]);     }
+    {   scanf("%d",&mid[i]);     } 
 
     int i,j;
     for( i=0;i<N && mid[i]<=mid[i+1];i++);
