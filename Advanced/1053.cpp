@@ -34,6 +34,19 @@ void dfs(int root,int sum)
     for(int i=0;i<node[root].child.size();i++)
         dfs(node[root].child[i],sum+node[node[root].child[i]].val);
 }
+
+void dfs2(int root,int need)
+{   //写了两种dfs函数，调用任意一个均可
+    if(node[root].child.size()==0) 
+    {
+        if(node[root].val==need)    printpath(root);
+        return;
+    }
+    if(node[root].val>need) return;
+    for(int i=0;i<node[root].child.size();i++)
+        dfs2(node[root].child[i],need-node[root].val);
+}
+
 bool cmp(int a,int b)   { return node[a].val>node[b].val;   }
 
 int main()
@@ -61,5 +74,6 @@ int main()
         /*反正又不是二叉树，便可对孩子节点进行排序，排序后处理题目的输出要求更方便*/
     }
     dfs(0,node[0].val);
+    //dfs2(0,W);
     return 0;
 }
