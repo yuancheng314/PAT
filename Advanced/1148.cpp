@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(){
-    int N,count=0;
+    int N;
     cin>>N;
     vector<int> word(N+1),charecter(N+1);
     for(int i=1;i<=N;i++)   scanf("%d",&word[i]);
